@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize')
 const sequelize = require('../database/database');
 
 const Empresa = require('./Empresa');
@@ -9,7 +9,7 @@ const Produto = sequelize.define("Produtos", {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
     },
 
         // INSERIR PROP AREA
@@ -43,23 +43,23 @@ const Produto = sequelize.define("Produtos", {
 	DESCR: {
         allowNull: false,
         unique: true, 
-        type: Sequelize.STRING(255)
+        type: DataTypes.STRING(255)
     },
 
 	REF: {
-        type: Sequelize.STRING(255)
+        type: DataTypes.STRING(255)
     },
 
 	MARCA: {
-        type: Sequelize.STRING(255)
+        type: DataTypes.STRING(255)
     },
 
 	MED: {
-        type: Sequelize.STRING(255)
+        type: DataTypes.STRING(255)
     },
 
 	QTD: {
-        type: Sequelize.FLOAT
+        type: DataTypes.FLOAT
     },
 });
 

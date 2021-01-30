@@ -1,11 +1,11 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize')
 const sequelize = require('../database/database');
 
 const Empresa = sequelize.define("Empresas", {
     COD_EMPRESA: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
 
         validate: {
@@ -15,7 +15,7 @@ const Empresa = sequelize.define("Empresas", {
     },
     
 	EMPRESA: {
-        type: Sequelize.STRING(255),
+        type: DataTypes.STRING(255),
         unique: true, 
     },
 });

@@ -1,4 +1,4 @@
-const Sequelize = require('Sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require ('../database/database');
 
 const Produto = require('./Produto');
@@ -11,12 +11,12 @@ const Retirada = sequelize.define("Retiradas", {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,           
+        type: DataTypes.INTEGER,           
     },  
 
     CPF: {
         allowNull: false,
-        type: Sequelize.STRING(11),
+        type: DataTypes.STRING(11),
         
         REFERENCES: {
             Model: "Usuarios",
@@ -27,7 +27,7 @@ const Retirada = sequelize.define("Retiradas", {
 
     COD_PRODUTO: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
 
         REFERENCES: {
             Model: "Produtos",
@@ -37,7 +37,7 @@ const Retirada = sequelize.define("Retiradas", {
 
     EMPRESA_REC: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
 
         REFERENCES: {
             Model: "Empresas",
@@ -47,17 +47,17 @@ const Retirada = sequelize.define("Retiradas", {
 
     NOME_REC: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: DataTypes.STRING(255),
     },
 
     SETOR_REC: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: DataTypes.STRING(255),
     },
 
     QTD: {
         allowNull: false,
-        type: Sequelize.FLOAT,
+        type: DataTypes.FLOAT,
     },
 
 }, {

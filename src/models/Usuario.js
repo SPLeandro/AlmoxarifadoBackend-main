@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../database/database.js');
 
 const Empresa = require('../models/Empresa');
@@ -7,12 +7,12 @@ const Usuario = sequelize.define("Usuarios", {
     CPF: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.STRING(11)
+        type: DataTypes.STRING(11)
     },
     
     NOME: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: DataTypes.STRING(255),
         validate: {
             len: [3, 255]
         }
@@ -20,7 +20,7 @@ const Usuario = sequelize.define("Usuarios", {
 
     LOGIN: {
         allowNull: false,
-        type: Sequelize.STRING(20),
+        type: DataTypes.STRING(20),
         validate: {
             len: [3, 20]
         },
@@ -29,7 +29,7 @@ const Usuario = sequelize.define("Usuarios", {
     
     SENHA: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: DataTypes.STRING(255),
         validate: {
             len: [8, 255]
         }
@@ -39,7 +39,7 @@ const Usuario = sequelize.define("Usuarios", {
 
     COD_EMPRESA: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
 
         REFERENCES: {
             model: "Empresas",
@@ -52,7 +52,7 @@ const Usuario = sequelize.define("Usuarios", {
     
     dataNascimento: {
         allowNull: false,
-        type: Sequelize.DATE()
+        type: DataTypes.DATE()
     },
 });
 
